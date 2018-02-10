@@ -16,6 +16,7 @@
     - 3.4.0 version Win Pack
 
 #### QT 
+- QT verision : 5.8.0-1
 - Cross-platform software development for embedded & desktop
 - About Qt
 - [Qt Link](https://www.qt.io/)
