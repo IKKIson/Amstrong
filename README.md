@@ -71,5 +71,5 @@
 - [Beuron Team Workplace](bueron.slack.com)
 
 #### report link
-- [Google Docs Dev Report link](https://docs.google.com/document/d/1hW-SAZPnTKkyVt1c9CbRsa6prlZuBPeDcpeEmqpzVt4/editx)
+- [Google Docs Dev Report link](https://docs.google.com/document/d/1hW-SAZPnTKkyVt1c9CbRsa6prlZuBPeDcpeEmqpzVt4/edit)
 
