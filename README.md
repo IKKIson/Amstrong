@@ -15,6 +15,9 @@
 - [openCV Downlowd Link](https://sourceforge.net/projects/opencvlibrary/files/opencv-win/3.4.0/opencv-3.4.0-vc14_vc15.exe/download)
     - 3.4.0 version Win Pack
 
+#### aruco
+- aruco version : 3.0.0/aruco304
+
 #### QT 
 - QT verision : 5.8.0-1
 - Cross-platform software development for embedded & desktop
