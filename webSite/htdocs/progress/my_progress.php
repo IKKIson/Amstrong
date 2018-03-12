@@ -15,25 +15,36 @@
     //import databaseManager class
     include_once($_SERVER['DOCUMENT_ROOT']."/model_database/util.php");
 
-    
-    //TODO: DatabaseManager $dbManager사용하여 db_init()부분을 없애기 
     $conn = db_init();
+
     if($_SERVER['REQUEST_METHOD'] == 'GET') {
-        //echo "get으로 요청된 상태";
 
-        $sql = "select * from UserDB";
+        $email = "gkagm2@gmail.com";
+        //$email = $_POST['email'];
+        $sql = "select * from UserDB u , UserStudyDB us where u.email = us.email and u.email = '$email'";
+        
+        
+
         $result = mysqli_query($conn, $sql);
-
-        echo "userDB";
+    
         while($row = mysqli_fetch_array($result)){
             echo "<hr>";
-            echo "user email: " . $row['email'] . "<br>";
-            echo "user password : " . $row['password'] . "<br>";
-            echo "user name : " . $row['name'] . "<br>";
-            echo "<hr>";
+            echo "email : " .$row['email'];
+            echo "<br>";            
+            echo "curernt chapter : " . $row['chapter'];
+            echo "<br>";       
+            echo "chapter_check : " . $row['chapter_check'];
+            echo "<br>";            
+            echo "category : " . $row['category'];
+            echo "<br>";            
+            echo "category_check : " . $row['category_check'];
+            echo "<hr>";            
         }
-        
+
     }
+    
+    
+
 
     if($_SERVER['REQUEST_METHOD'] == 'POST') {
 
