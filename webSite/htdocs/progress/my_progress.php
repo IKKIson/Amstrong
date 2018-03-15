@@ -30,15 +30,6 @@
         while($row = mysqli_fetch_array($result)){
             echo "<hr>";
             echo "email : " .$row['email'];
-            echo "<br>";            
-            echo "curernt chapter : " . $row['chapter'];
-            echo "<br>";       
-            echo "chapter_check : " . $row['chapter_check'];
-            echo "<br>";            
-            echo "category : " . $row['category'];
-            echo "<br>";            
-            echo "category_check : " . $row['category_check'];
-            echo "<hr>";            
         }
 
     }
@@ -49,6 +40,21 @@
     if($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     }
-    ?>    
+    ?>
+
+    <div>
+    <?php
+        echo "동물";
+        //$sql = "select * from UserDB u , UserStudyDB us where u.email = us.email and u.email = '$email'";
+        //$sql = "select * from UserDB"
+
+        echo "사물";
+        echo "숫자";
+        echo "시간";
+    ?>
+    </div>
+
+
+    
 </body>
 </html>

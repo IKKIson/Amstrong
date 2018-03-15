@@ -13,7 +13,7 @@
     <?php //header, navigation
     include_once($_SERVER['DOCUMENT_ROOT'] ."/common_form/path.php");?>
 
-    <form class="navbar-form navbar-left" role="search" action"" method="post">
+    <form class="navbar-form navbar-left" role="search" action="" method="post">
         <div class="form-group">
             <input type="text" class="form-control" placeholder="name" name="user_name"><br>
             <input type="text" class="form-control" placeholder="email" name="user_email"> <br>

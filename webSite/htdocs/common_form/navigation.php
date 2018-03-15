@@ -5,6 +5,7 @@
         <li role="presentation"><a href="../board/index.php">게시판</a></li>
         <li role="presentation"><a href="../progress/my_progress.php">나의 학습 진행도</a></li>
         <li role="presentation"><a href="../register_user/create_user.php">회원가입</a></li>
+        <li role="presentation"><a href="../login/login.php">로그인</a></li>
         <!--<li role="presentation"><a href="">랭킹</a></li>-->
         
     </ul>
