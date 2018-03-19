@@ -18,15 +18,20 @@
 
 
     if($_SERVER['REQUEST_METHOD'] == 'GET'){
-        ?>
-        <form class="navbar-form navbar-left" role="search" action="" method="post">
-        <div class="form-group">
-            <input type="text" class="form-control" placeholder="email" name="user_email"> <br>
-            <input type="text" class="form-control" placeholder="password" name="user_password"><br>
-        </div>
-        <button type="submit" class="btn btn-default">로그인</button>
-        </form>
-        <?php
+
+        //if not login state
+        if($_SESSION['p_email'] == ""){
+            ?>
+            <form class="navbar-form navbar-left" role="search" action="" method="post">
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="email" name="user_email"> <br>
+                <input type="password" class="form-control" placeholder="password" name="user_password"><br>
+            </div>
+            <button type="submit" class="btn btn-default">로그인</button>
+            </form>
+            <?php
+            
+        }
     }
 
     if($_SERVER['REQUEST_METHOD'] == 'POST'){
@@ -53,6 +58,7 @@
                 $emailCheck = true;
                 if($row['password'] == $password){
                     $passwordCheck = true;
+                    $name = $row['name'];
                 }
                 break; // stop after check .
             }
@@ -65,7 +71,22 @@
             echo "패스워드가 맞지 않습니다.";
         } else if($emailCheck == true && $passwordCheck == true){
             echo "성공적으로 로그인 되었습니다.";
-            //TODO: 세션 확인 후 코드 작성해야 함. 
+            
+    
+            //register session 
+            $_SESSION["p_email"] = $email;
+            $_SESSION["p_name"] = $name;
+            $_SESSION["p_password"] = $password;
+
+            ?>
+            <script>
+                alert('로그인 완료');
+            </script>
+            <?php
+            //TODO: 메인화면으로 넘어가는 코드 작성해야 함
+            //move page
+            echo "<meta http-equiv='Refresh' content='; URL=/index.php'>";
+
         }
         
     }

@@ -9,10 +9,19 @@
 
     ////database connect to beuron server databae
     //$dbManager->connect_database();
-    
+
+    //session start  for  login system
+    session_start();
 ?>
 
 
     <!-- main logo picture -->
-    <img src="../files/logo/logo.jpg" alt="" width="200" >    
+    <a href="/index.php"><img src="../files/logo/logo.jpg" alt="" width="200" ></a>
+    
+
+    <center>
+    <?php
+        echo $_SESSION['p_name'];
+    ?>
+    <center>
 </div>

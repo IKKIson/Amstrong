@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <?php //bootstrap
     include_once "../style/bootstrap.php";?>
-    <title>Amstrong 게시판</title>
+    <title>나의 학습 진행도</title>
 </head>
 <body>
     <?php //header, navigation
@@ -17,19 +17,70 @@
 
     $conn = db_init();
 
-    if($_SERVER['REQUEST_METHOD'] == 'GET') {
 
-        $email = "gkagm2@gmail.com";
+
+    ?>
+
+    <div>
+        <table class="table table-bordered">
+            <tr>
+                <th>Email</th>
+                <th>Chapter</th>
+                <th>Category</th>
+                <th>Card Id</th>
+                <th>Check</th>
+            </tr>
+            <tr>
+                <td>fuck iy</td>
+                <td>fuck iy</td>
+                <td>fuck iy</td>
+            </tr>
+
+        </table>
+    </div>
+
+
+    <?php
+    if($_SERVER['REQUEST_METHOD'] == 'GET') {
+        $email = $_SESSION["p_email"];
+        //$email = "gkagm2@gmail.com";
         //$email = $_POST['email'];
+        echo "my email " . $email;
         $sql = "select * from UserDB u , UserStudyDB us where u.email = us.email and u.email = '$email'";
-        
-        
+
+        ##
+        $oldEmail;
+        $emailCk = false;
+        ##
 
         $result = mysqli_query($conn, $sql);
-    
+        $count = 1;
         while($row = mysqli_fetch_array($result)){
-            echo "<hr>";
-            echo "email : " .$row['email'];
+            echo $count . " ";
+            echo "<br>";
+            $oldEmail = $raw['email'];
+
+            //email flag 설정
+            if($raw['email'] == $oldEmail){
+                $emailCk = true;
+            }
+            //한번도 안나왔으면 email을 보여준다.
+            if($emailCk == false){
+                echo " email : " .$row['email'];
+                echo "<br>";
+            }
+            
+            echo " chapter : " .$row['chapter'];
+            echo "<br>";
+            echo " category : " .$row['category'];
+            echo "<br>";
+            echo " category_check : " .$row['category_check'];
+            echo "<br>";
+            echo " card_id : " .$row['card_id'];
+            echo "<br>";
+            echo " card_id_check : " .$row['card_id_check'];
+            echo "<br>";
+            $count++;
         }
 
     }
@@ -54,7 +105,7 @@
     ?>
     </div>
 
-
+    
     
 </body>
 </html>
