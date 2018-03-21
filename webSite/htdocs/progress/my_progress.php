@@ -38,14 +38,19 @@
 
         </table>
     </div>
-
+    <center>
 
     <?php
     if($_SERVER['REQUEST_METHOD'] == 'GET') {
         $email = $_SESSION["p_email"];
         //$email = "gkagm2@gmail.com";
         //$email = $_POST['email'];
-        echo "my email " . $email;
+        if($email == ""){
+            echo "<h2>로그인을 해주세요</h2>";
+        } else {
+            echo "<h3>my email : " . $email . "</h3>";
+        }
+        
         $sql = "select * from UserDB u , UserStudyDB us where u.email = us.email and u.email = '$email'";
 
         ##
@@ -56,7 +61,7 @@
         $result = mysqli_query($conn, $sql);
         $count = 1;
         while($row = mysqli_fetch_array($result)){
-            echo $count . " ";
+            echo "----".$count . "----";
             echo "<br>";
             $oldEmail = $raw['email'];
 
@@ -70,16 +75,13 @@
                 echo "<br>";
             }
             
-            echo " chapter : " .$row['chapter'];
-            echo "<br>";
-            echo " category : " .$row['category'];
-            echo "<br>";
-            echo " category_check : " .$row['category_check'];
-            echo "<br>";
-            echo " card_id : " .$row['card_id'];
-            echo "<br>";
-            echo " card_id_check : " .$row['card_id_check'];
-            echo "<br>";
+            echo " <h4>chapter : " .$row['chapter'] ."</h4>";
+            echo " <h4>category : " .$row['category'] ."</h4>";
+            echo "   ";
+            echo " <h4>category_check : " .$row['category_check']."</h4>";
+            echo " <h4>card_id : " .$row['card_id']."</h4>";
+            echo "   ";
+            echo " <h4>card_id_check : " .$row['card_id_check']."</h4>";
             $count++;
         }
 
@@ -104,8 +106,7 @@
         echo "시간";
     ?>
     </div>
-
-    
+    </center>
     
 </body>
 </html>
