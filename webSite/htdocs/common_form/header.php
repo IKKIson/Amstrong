@@ -21,7 +21,7 @@
 
     <center>
     <?php
-        echo $_SESSION['p_name'];
+        echo "<h1> Wellcome ".$_SESSION['p_name']."</h1>";
     ?>
     <center>
 </div>
