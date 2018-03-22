@@ -16,7 +16,6 @@
     include_once($_SERVER['DOCUMENT_ROOT']."/model_database/util.php");
 
 
-
     if($_SERVER['REQUEST_METHOD'] == 'GET'){
 
         //if not login state
@@ -91,6 +90,5 @@
         
     }
     ?>
-    
 </body>
 </html>
