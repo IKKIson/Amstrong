@@ -16,7 +16,7 @@
     }
 
     $sql = "select email UserDB where email='".$newEmail."'";
-    echo $sql;
+    
 
     $checkExistEmail = mysqli_query($conn, $sql);
 
@@ -25,12 +25,13 @@
     if(!$checkExistEmail || mysqli_num_rows($checkExistEmail) == 0){ //if not exist same email
         $sql = "insert UserDB (email, password, name) values('$newEmail','$newPassword','$newName')";
         $result = mysqli_query($conn, $sql);
-        echo ($result == true) ? "저장 성공" : "저장 실패";
-        echo "not exist id Create-Success!!!";
-        die("not Exist ID Create-Success!");
+        if($result == true){
+            die("success");
+        } else {
+            die("existId"); //TODO: 이부분 조건문 없앨 수 있으면 없애야 될 듯.나중에 
+        }
     } else {
-        echo "exist id";
-        die("already exist ID. Input other ID");
+        die("existId");
     }
 
 ?>
