@@ -24,11 +24,9 @@ if(mysqli_num_rows($checkExsistEmail) == 0){ // if not exist id
     while($row = mysqli_fetch_assoc($checkExsistEmail)){ // mysql_fetch_assoc : 연관 배열로 결과 행을 반환
         if($password == $row['password']){
             //load info
-            echo "fucking yes";
-            die("Login-Success!");
+            die("success");
         } else {
-            echo "fucking no";
-            die("Password does not Match. \n");
+            die("wrong");
         }
 
     }
