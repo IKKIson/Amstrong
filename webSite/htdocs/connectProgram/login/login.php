@@ -8,7 +8,7 @@ $password = $_POST['user_password'];
 
 $conn = db_init();
 
-if(!$conn){ //if occur error
+if(!$conn){ //if not connected
     die('Could not Connect:' . mysqli_error()); //The die() function prints a message and exits the current script.
 }
 
