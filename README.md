@@ -3,13 +3,19 @@
 
 ### Application in Windows
 
+#### Unity
+- Unity version 
+- [Download Link](https://unity3d.com/kr/unity/qa/patch-releases?version=2017.1)
+- using Vuforia7(vuforia-unity-6-2-10.unity package (46.20 MB) (SDK)
+- [Download Link](https://developer.vuforia.com/downloads/sdk)
+
 #### Visual Studio
 - Visual Studio 2017 community
 - [Download Link](https://www.visualstudio.com/ko/thank-you-downloading-visual-studio/?sku=Community&rel=15)
 
 #### openCV
 - Release version : opencv3.4
-    - [openCV Releases link](https://opencv.org/releases.html)
+- [openCV Releases link](https://opencv.org/releases.html)
 - Using APIs [Docs link](https://docs.opencv.org/3.4.0/)
 - [openCV home Link](https://opencv.org/)
 - [openCV Downlowd Link](https://sourceforge.net/projects/opencvlibrary/files/opencv-win/3.4.0/opencv-3.4.0-vc14_vc15.exe/download)
