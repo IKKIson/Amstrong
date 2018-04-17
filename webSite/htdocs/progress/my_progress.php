@@ -29,67 +29,9 @@
 
     <center>
         
-        <table width="250" boarder="1" cellpadding="0" cellspacing="0">
-            <caption>사용자</caption>
-            <th>Category</th>
-            <td>사물</td>
-            <tr></tr>
-            <td>animal</td>
 
-            <tr>
-                <th>Chapter</th>
-                <td>1</td>    
-                <td>
-                this
-                    <div class="progress">
-                        <div class="progress-bar progress-bar-danger progress-bar-striped" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20%">
-                            <span class="sr-only">80% Complete (danger)</span>
-                        </div>
-                    </div>
-                </td>
-            </tr>
-            <td>animal</td>
 
-            <tr>
-                <th>Chapter</th>
-                <td>1</td>    
-                <td>
-                this
-                    <div class="progress">
-                        <div class="progress-bar progress-bar-danger progress-bar-striped" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20%">
-                            <span class="sr-only">80% Complete (danger)</span>
-                        </div>
-                    </div>
-                </td>
-            </tr>
-        </table>
 
-        <table>
-
-            <tr>
-                <td>fucking</td>
-                <td>shit</td>
-            </tr>
-
-            
-            <tr>
-                <th>Email</th>
-                <th>Chapter</th>
-                <th>Category</th>
-                <th>Card Id</th>
-                <th>Check</th>
-                <td>fucki</td>
-                <td>fucki</td>
-                <td>fucki</td>
-                <td>fucki</td>
-            </tr>
-            <tr>
-                <td>fuck iy</td>
-                <td>fuck iy</td>
-                <td>fuck iy</td>
-            </tr>
-
-        </table>
     </center>
     <center>
 
@@ -105,18 +47,19 @@
         }
         
         $sql = "select * from UserDB u , UserStudyDB us where u.email = us.email and u.email = '$email'";
-
+        // $sqlgetChapterInfo = "select chapter from UserDB u , UserStudyDB us where u.email = us.email and u.email = '$email'";
         ##
         $oldEmail;
         $emailCk = false;
         ##
 
-        include "./table_form.php";
+        //include "./table_form.php";
 
         $result = mysqli_query($conn, $sql);
         $count = 1;
-        while($row = mysqli_fetch_array($result)){
-            echo "----".$count . "----";
+        while($row = mysqli_fetch_array($result)){ 
+            //TODO: form 부분과 데이터 출력 부분을 나눌 필요가 있음.
+            echo "----".$count . "----"; 
             echo "<br>";
             $oldEmail = $raw['email'];
 
@@ -129,14 +72,70 @@
                 echo " email : " .$row['email'];
                 echo "<br>";
             }
+            echo "<table width='300'>";
+
+            echo "<th>";
+            echo "chapter";
+            echo "</th>";
             
-            echo " <h4>chapter : " .$row['chapter'] ."</h4>";
-            echo " <h4>category : " .$row['category'] ."</h4>";
-            echo "   ";
-            echo " <h4>category_check : " .$row['category_check']."</h4>";
-            echo " <h4>card_id : " .$row['card_id']."</h4>";
-            echo "   ";
-            echo " <h4>card_id_check : " .$row['card_id_check']."</h4>";
+            echo "<td>" . $row['chapter'] . "</td>";
+
+            echo "<tr>";
+            echo "</tr>";
+
+            echo "<th>";
+            echo "category";
+            echo "</th>";
+
+            echo "<td>" .$row['category'] ."</td>";
+
+            echo "<tr>";
+            echo "</tr>";
+
+            echo "<th>";
+            echo "category_check";
+            echo "</th>";
+
+            echo "<td>" .$row['category_check'] . "</td>";
+            
+            echo "<tr>";
+            echo "</tr>";
+
+            echo "<th>";
+            echo "card_id";
+            echo "</th>";
+
+            echo "<td>" .$row['card_id'] . "</td>";
+
+            echo "<tr>";
+            echo "</tr>";
+
+            echo "<th>";
+            echo "card_id_check";
+            echo "</th>";
+
+            
+            echo "<td>" .$row['card_id_check']."</td>";
+
+            echo "<tr>";
+            echo "</tr";
+
+            echo "<th>";
+            echo "graph";
+            echo "</th>";
+
+            ?>
+            <td>
+                    <div class="progress">
+                    <div class="progress-bar progress-bar-danger progress-bar-striped" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20%">
+                        <span class="sr-only">80% Complete (danger)</span>
+                    </div>
+                </div>
+            </td>
+            <?php
+            echo "</table>";
+
+            
             $count++;
         }
 
