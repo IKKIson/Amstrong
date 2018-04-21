@@ -4,9 +4,8 @@
 ### Application in Windows
 
 #### Unity
-- Unity version : 2017.3.1.p4 (64-bit)
+- Unity version : Unity 2017.3.1p4 (64-bit)
 - [Download Link](https://unity3d.com/kr/unity/qa/patch-releases?version=2017.3)
-
 
 #### Visual Studio
 - Visual Studio 2017 community
