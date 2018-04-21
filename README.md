@@ -4,10 +4,8 @@
 ### Application in Windows
 
 #### Unity
-- Unity version 
-- [Download Link](https://unity3d.com/kr/unity/qa/patch-releases?version=2017.1)
-- using Vuforia7(vuforia-unity-6-2-10.unity package (46.20 MB) (SDK)
-- [Download Link](https://developer.vuforia.com/downloads/sdk)
+- Unity version : Unity 2017.3.1p4 (64-bit)
+- [Download Link](https://unity3d.com/kr/unity/qa/patch-releases?version=2017.3)
 
 #### Visual Studio
 - Visual Studio 2017 community
