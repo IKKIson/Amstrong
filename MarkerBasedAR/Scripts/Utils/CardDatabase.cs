@@ -6,39 +6,42 @@ public class ObjectDB
 {
     //사물에관한 임시 DB
     public const int markerCount = 6; //마커의 개수는 6개
-    public static string[] english = new string[6];
-    public static string[] korean = new string[6];
-    public static string[] phoneticAlpabet = new string[6];
-    public static string[] relationSentence = new string[6];
-    public static string[] soundPath = new string[6];
-    public static string[] imagePath = new string[6];
+    public static string[] english = new string[6]; //영어
+    public static string[] korean = new string[6]; //한국어
+    public static string[] partOfSpeech = new string[6]; //형태
+    public static string[] phoneticAlpabet = new string[6]; //발음기호
+    public static string[] relationSentenceEn = new string[6]; //영어 예시 문장
+    public static string[] relationSentenceKo = new string[6]; //한국어 예시 문장
 
     //생성자
     static ObjectDB()
     {
         InitDB();
 
-        english[0] = "Computer";
-        korean[0] = "컴퓨터";
-        phoneticAlpabet[0] = "kəm|pju:tə(r)";
-        relationSentence[0] = "남자가 컴퓨터를 들어올리고 있다 The man is lifting the computer";
-        soundPath[0] = "";
-        imagePath[0] = "";
+        english[0] = "Cars";
+        korean[0] = "자동차";
+        phoneticAlpabet[0] = "kɑ:(r)";
+        partOfSpeech[0] = "None";
+        relationSentenceEn[0] = "Cars emit carbon dioxide";
+        relationSentenceKo[0] = "자동차는 이산화탄소를 배출한다";
 
-        english[1] = "Cars";
-        korean[1] = "자동차";
-        phoneticAlpabet[1] = "kɑ:(r)";
-        relationSentence[1] = "자동차는 이산화탄소를 배출한다 Cars emit carbon dioxide";
-        soundPath[1] = "";
-        imagePath[1] = "";
+        english[1] = "Soccer ball";
+        korean[1] = "축구공";
+        phoneticAlpabet[1] = "sɑ́kər bɔ:l";
+        partOfSpeech[1] = "None";
+        relationSentenceEn[1] = "Cars emit carbon dioxide";
+        relationSentenceKo[1] = "자동차는 이산화탄소를 배출한다";
 
-        english[2] = "Cars";
-        korean[2] = "자동차";
-        phoneticAlpabet[2] = "kɑ:(r)";
-        relationSentence[2] = "자동차는 이산화탄소를 배출한다 Cars emit carbon dioxide";
-        soundPath[2] = "";
-        imagePath[2] = "";
+        english[2] = "Notebook computer";
+        korean[2] = "노트북";
+        phoneticAlpabet[2] = "noʊtbʊk kəm|pju:tə(r)";
+        partOfSpeech[2] = "None";
+        relationSentenceEn[2] = "The man is lifting the Notebook computer";
+        relationSentenceKo[2] = "남자가 노트북을 들어올리고 있다";
+
     }
+
+    //초기화
     public static void InitDB()
     {
         int i;
@@ -48,44 +51,29 @@ public class ObjectDB
             english[i] = "";
             korean[i] = "";
             phoneticAlpabet[i] = "";
-            relationSentence[i] = "";
-            soundPath[i] = "";
-            imagePath[i] = "";
+            partOfSpeech[i] = "";
+            relationSentenceKo[i] = "";
+            relationSentenceEn[i] = "";
+
         }
 
     }
 
-    public static string GetRowInfo(int n)  //n 은 number
+    //처리하기 쉽게 배열로 리턴함.
+    public static string[] GetRowInfo(int n)  //n 은 number
     {
-        //TODO: 한꺼번에 리턴시키게 해놨는데 나중에 배열로 리턴시키게해야함
-        string str = english[n] + korean[n] + phoneticAlpabet[n] + phoneticAlpabet[n] + relationSentence[n] + soundPath[n] + imagePath[n];
-        return str;
+        
+        //순서대로 영어 ,한국어, 발음기호, 형태, 영어문장, 한국어 문장 순.
+        string[] tempIndex = new string[6];
+        tempIndex[0] = english[n];
+        tempIndex[1] = korean[n];
+        tempIndex[2] = phoneticAlpabet[n];
+        tempIndex[3] = partOfSpeech[n];
+        tempIndex[4] = relationSentenceKo[n];
+        tempIndex[5] = relationSentenceEn[n];
+        
+        return tempIndex;
 
-
-    }
-}
-public class CardDatabase
-{
-
-
-    public void HumanDB()
-    {
-
-    }
-    public void ObjectDB()
-    {
-
-    }
-    public void TimeDB()
-    {
-
-    }
-    public void AnimalDB()
-    {
-
-    }
-    public void NumberDB()
-    {
 
     }
 }
