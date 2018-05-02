@@ -13,6 +13,12 @@ function db_get_card_info(){
 }
 
 
+class UserState{
+    public $email;
+    public $chapter;
+    public $category;
+}
+
 
 
 
@@ -55,4 +61,5 @@ class DatabaseManager{
 
     }
 }
+
 ?>
