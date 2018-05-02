@@ -21,6 +21,13 @@ namespace MarkerBasedARExample
         public GameObject MyCanvas;
         public UnityEngine.UI.Text ShowInfoText;
 
+        [Header("Marker 3D Text")]
+        //TODO: 마커 갯수마다 3D Text를 만들어줘서 넣어줘야되는 문제를 해결할 방법을 찾아봐야 함
+        public TextMesh showStudyCardInfoText0;
+        public TextMesh showStudyCardInfoText1;
+        public TextMesh showStudyCardInfoText2;
+
+
         /// <summary>
         /// The texture.
         /// </summary>
@@ -305,6 +312,37 @@ namespace MarkerBasedARExample
                                 ShowInfoText.text = CardInfo.PrintIsCardCheck(); // 카드 체크됬는지 확인하는 메세지 리턴 
                                 Debug.Log(CardInfo.PrintIsCardCheck());
                                 CardInfo.SetALLCardFlagsFalse(); //모든 체크를 false로 만들기
+                                int currentIndex = CardInfo.GetCurrentTrueIndex(); //화면에 보여주고있는 마커의 해당 index를 가져옴
+                                Debug.Log("currnetIndex. : " + currentIndex);
+                                //임시 데이터베이스에서 가져온 정보를 3D text에 뿌려줌
+                                if(marker.id == CardInfo.CARD0)
+                                {
+                                    //TODO : indeㅌ를 crrentindex로 대체하려 햇는데 인덱스 오류가 남
+                                    showStudyCardInfoText0.text =                                   //ObjectDB.english[currentIndex] + "\n" +
+                                    ObjectDB.korean[0] + "\n" + 
+                                    ObjectDB.phoneticAlpabet[0] + "\n" +
+                                    ObjectDB.relationSentenceEn[0] + "\n" +
+                                    ObjectDB.relationSentenceKo[0];
+                                }
+                                else if(marker.id == CardInfo.CARD1)
+                                {
+                                    showStudyCardInfoText1.text =
+                                    ObjectDB.english[1] + "\n" +
+                                    ObjectDB.korean[1] + "\n" +
+                                    ObjectDB.phoneticAlpabet[1] + "\n" +
+                                    ObjectDB.relationSentenceEn[1] + "\n" +
+                                    ObjectDB.relationSentenceKo[1];
+                                }
+                                else if(marker.id == CardInfo.CARD2)
+                                {
+                                    showStudyCardInfoText2.text =
+                                    ObjectDB.english[2] + "\n" +
+                                    ObjectDB.korean[2] + "\n" +
+                                    ObjectDB.phoneticAlpabet[2] + "\n" +
+                                    ObjectDB.relationSentenceEn[2] + "\n" +
+                                    ObjectDB.relationSentenceKo[2];
+                                }
+                                
 
                                 transformationM = marker.transformation;
                                 //Debug.Log ("transformationM " + transformationM.ToString ());
