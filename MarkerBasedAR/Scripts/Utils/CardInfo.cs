@@ -61,5 +61,20 @@ class CardInfo
         
     }
 
-        
+    //화면에 보여주고있는 마커의 해당 index 리턴한다.
+    public static int GetCurrentTrueIndex()
+    {
+        int i;
+        for (i = 0; i < card.Length; i++)
+        {
+            if(cardExposedCheck[i] == true)
+            {
+                return i;
+            }
+        }
+        //모두 false면 -1을 리턴한다
+        return -1;
+    }
+
+
 }
