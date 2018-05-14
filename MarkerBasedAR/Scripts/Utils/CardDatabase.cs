@@ -4,6 +4,13 @@ using UnityEngine;
 
 public class ObjectDB
 {
+
+
+
+
+
+
+
     //사물에관한 임시 DB
     public const int markerCount = 6; //마커의 개수는 6개
     public static string[] english = new string[6]; //영어
@@ -29,8 +36,8 @@ public class ObjectDB
         korean[1] = "축구공";
         phoneticAlpabet[1] = "sɑ́kər bɔ:l";
         partOfSpeech[1] = "None";
-        relationSentenceEn[1] = "Cars emit carbon dioxide";
-        relationSentenceKo[1] = "자동차는 이산화탄소를 배출한다";
+        relationSentenceEn[1] = "Soccer ball is nice";
+        relationSentenceKo[1] = "축구공은 멋있다";
 
         english[2] = "Notebook computer";
         korean[2] = "노트북";

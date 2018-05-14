@@ -67,7 +67,7 @@ public class MenuUI : MonoBehaviour {
         //웹캠으로 화면전환 한다는 것으로 설정
         ScreenController.webcam = true;
         ScreenController.loginUI = false;
-        SceneManager.LoadScene("WebCamTextureMarkerBasedARExample");
+        SceneManager.LoadScene("WebCamTextureMarkerBasedARExample2");
     }
 
 

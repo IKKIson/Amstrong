@@ -110,7 +110,7 @@ namespace MarkerBasedARExample
         /// </summary>
         public void OnWebCamTextureToMatHelperInited()
         {
-            Debug.Log("OnWebCamTextureToMatHelperInited");
+            //Debug.Log("OnWebCamTextureToMatHelperInited");
 
             Mat webCamTextureMat = webCamTextureToMatHelper.GetMat();
 
@@ -120,7 +120,7 @@ namespace MarkerBasedARExample
 
             gameObject.transform.localScale = new Vector3(webCamTextureMat.cols(), webCamTextureMat.rows(), 1);
 
-            Debug.Log("Screen.width " + Screen.width + " Screen.height " + Screen.height + " Screen.orientation " + Screen.orientation);
+            //Debug.Log("Screen.width " + Screen.width + " Screen.height " + Screen.height + " Screen.orientation " + Screen.orientation);
 
 
             float width = webCamTextureMat.width();
@@ -156,10 +156,10 @@ namespace MarkerBasedARExample
             camMatrix.put(2, 0, 0);
             camMatrix.put(2, 1, 0);
             camMatrix.put(2, 2, 1.0f);
-            Debug.Log("camMatrix " + camMatrix.dump());
+            //Debug.Log("camMatrix " + camMatrix.dump());
 
             distCoeffs = new MatOfDouble(0, 0, 0, 0);
-            Debug.Log("distCoeffs " + distCoeffs.dump());
+            //Debug.Log("distCoeffs " + distCoeffs.dump());
 
             //calibration camera
             Size imageSize = new Size(width * imageSizeScale, height * imageSizeScale);
@@ -174,22 +174,22 @@ namespace MarkerBasedARExample
 
             Calib3d.calibrationMatrixValues(camMatrix, imageSize, apertureWidth, apertureHeight, fovx, fovy, focalLength, principalPoint, aspectratio);
 
-            Debug.Log("imageSize " + imageSize.ToString());
-            Debug.Log("apertureWidth " + apertureWidth);
-            Debug.Log("apertureHeight " + apertureHeight);
-            Debug.Log("fovx " + fovx[0]);
-            Debug.Log("fovy " + fovy[0]);
-            Debug.Log("focalLength " + focalLength[0]);
-            Debug.Log("principalPoint " + principalPoint.ToString());
-            Debug.Log("aspectratio " + aspectratio[0]);
+            //Debug.Log("imageSize " + imageSize.ToString());
+            //Debug.Log("apertureWidth " + apertureWidth);
+            //Debug.Log("apertureHeight " + apertureHeight);
+            //Debug.Log("fovx " + fovx[0]);
+            //Debug.Log("fovy " + fovy[0]);
+            //Debug.Log("focalLength " + focalLength[0]);
+            //Debug.Log("principalPoint " + principalPoint.ToString());
+            //Debug.Log("aspectratio " + aspectratio[0]);
 
 
             //To convert the difference of the FOV value of the OpenCV and Unity. 
             double fovXScale = (2.0 * Mathf.Atan((float)(imageSize.width / (2.0 * fx)))) / (Mathf.Atan2((float)cx, (float)fx) + Mathf.Atan2((float)(imageSize.width - cx), (float)fx));
             double fovYScale = (2.0 * Mathf.Atan((float)(imageSize.height / (2.0 * fy)))) / (Mathf.Atan2((float)cy, (float)fy) + Mathf.Atan2((float)(imageSize.height - cy), (float)fy));
 
-            Debug.Log("fovXScale " + fovXScale);
-            Debug.Log("fovYScale " + fovYScale);
+            //Debug.Log("fovXScale " + fovXScale);
+            //Debug.Log("fovYScale " + fovYScale);
 
 
             //Adjust Unity Camera FOV https://github.com/opencv/opencv/commit/8ed1945ccd52501f5ab22bdec6aa1f91f1e2cfd4
@@ -206,13 +206,13 @@ namespace MarkerBasedARExample
 
             MarkerDesign[] markerDesigns = new MarkerDesign[markerSettings.Length];
             //MarkerDesign[] markerDesigns = new MarkerDesign[3];
-            Debug.Log("markerDesigns: " + markerDesigns.Length);
+            //Debug.Log("markerDesigns: " + markerDesigns.Length);
 
 
             for (int i = 0; i < markerDesigns.Length; i++)
             {
                 markerDesigns[i] = markerSettings[i].markerDesign;
-                Debug.Log("markerDesigns count : : " + markerDesigns[i]);
+                //Debug.Log("markerDesigns count : : " + markerDesigns[i]);
 
             }
 
@@ -221,10 +221,10 @@ namespace MarkerBasedARExample
 
 
             invertYM = Matrix4x4.TRS(Vector3.zero, Quaternion.identity, new Vector3(1, -1, 1));
-            Debug.Log("invertYM " + invertYM.ToString());
+            //Debug.Log("invertYM " + invertYM.ToString());
 
             invertZM = Matrix4x4.TRS(Vector3.zero, Quaternion.identity, new Vector3(1, 1, -1));
-            Debug.Log("invertZM " + invertZM.ToString());
+            //Debug.Log("invertZM " + invertZM.ToString());
 
 
             //if WebCamera is frontFaceing,flip Mat.
@@ -239,7 +239,7 @@ namespace MarkerBasedARExample
         /// </summary>
         public void OnWebCamTextureToMatHelperDisposed()
         {
-            Debug.Log("OnWebCamTextureToMatHelperDisposed");
+            //Debug.Log("OnWebCamTextureToMatHelperDisposed");
 
         }
 
@@ -265,7 +265,7 @@ namespace MarkerBasedARExample
                     List<Marker> findMarkers = markerDetector.getFindMarkers();
                     if (findMarkers.Count > 0)
                     {
-                        Debug.Log("I found marker : " + findMarkers.Count);
+                        //Debug.Log("I found marker : " + findMarkers.Count);
                         Marker marker = findMarkers[0];
 
                         if (markerSettings.Length > 0)
@@ -275,7 +275,7 @@ namespace MarkerBasedARExample
                             if (marker.id == settings.getMarkerId())
                             {
                                 transformationM = marker.transformation;
-                                Debug.Log("transformationM " + transformationM.ToString());
+                                //Debug.Log("transformationM " + transformationM.ToString());
                                 CardInfo.CheckID(marker.id); //화면에 노출된 카드 체크하기
                                 ShowInfoText.text = CardInfo.PrintIsCardCheck(); // 카드 체크됬는지 확인하는 메세지 리턴 
                                 Debug.Log(CardInfo.PrintIsCardCheck());
@@ -298,7 +298,7 @@ namespace MarkerBasedARExample
                 {
 
                     List<Marker> findMarkers = markerDetector.getFindMarkers();
-                    Debug.Log("I found marker !: " + findMarkers.Count);
+                    //Debug.Log("I found marker !: " + findMarkers.Count);
                     for (int i = 0; i < findMarkers.Count; i++)
                     {
                         Marker marker = findMarkers[i];
@@ -307,45 +307,70 @@ namespace MarkerBasedARExample
                         {
                             if (marker.id == settings.getMarkerId())
                             {
-                                Debug.Log("이게 진짜다!!!!!!!!!!!marker id : " + marker.id);
-                                CardInfo.CheckID(marker.id); //화면에 노출된 카드 체크하기
-                                ShowInfoText.text = CardInfo.PrintIsCardCheck(); // 카드 체크됬는지 확인하는 메세지 리턴 
-                                Debug.Log(CardInfo.PrintIsCardCheck());
-                                int currentIndex = CardInfo.GetCurrentTrueIndex(); //화면에 보여주고있는 마커의 해당 index를 가져옴
-                                Debug.Log("currnetIndex. : " + currentIndex);
-                                //임시 데이터베이스에서 가져온 정보를 3D text에 뿌려줌
-                                if(currentIndex == 0)
+                                //Debug.Log("이게 진짜다!!!!!!!!!!!marker id : " + marker.id);
+
+                                if (UserInfo.wordStudyObject) // 사물 공부
                                 {
-                                    // 인식 속도 때문에 함수 안만듬
-                                    showStudyCardInfoText0.text =
-                                    ObjectDB.english[currentIndex] + "\n" +
-                                    ObjectDB.korean[currentIndex] + "\n" + 
-                                    ObjectDB.phoneticAlpabet[currentIndex] + "\n" +
-                                    ObjectDB.relationSentenceEn[currentIndex] + "\n" +
-                                    ObjectDB.relationSentenceKo[currentIndex];
+                                    CardInfo.CheckID(marker.id); //화면에 노출된 카드 체크하기
+                                    //ShowInfoText.text = CardInfo.PrintIsCardCheck(); // 카드 체크됬는지 확인하는 메세지 리턴 
+                                    //Debug.Log(CardInfo.PrintIsCardCheck());
+                                    int currentIndex = CardInfo.GetCurrentTrueIndex(); //화면에 보여주고있는 마커의 해당 index를 가져옴
+                                    //Debug.Log("currnetIndex. : " + currentIndex);
+                                    //임시 데이터베이스에서 가져온 정보를 3D text에 뿌려줌
+                                    if (currentIndex == 0)
+                                    {
+                                        // 인식 속도 때문에 함수 안만듬
+                                        showStudyCardInfoText0.text =
+                                        "[영어]" + ObjectDB.english[currentIndex] + "\n" +
+                                        "[한국어]" + ObjectDB.korean[currentIndex] + "\n" +
+                                        "[품사]" + ObjectDB.phoneticAlpabet[currentIndex] + "\n";
                                 }
-                                else if(currentIndex == 1)
-                                {
-                                    showStudyCardInfoText1.text =
-                                    ObjectDB.english[currentIndex] + "\n" +
-                                    ObjectDB.korean[currentIndex] + "\n" +
-                                    ObjectDB.phoneticAlpabet[currentIndex] + "\n" +
-                                    ObjectDB.relationSentenceEn[currentIndex] + "\n" +
-                                    ObjectDB.relationSentenceKo[currentIndex];
+                                    else if (currentIndex == 1)
+                                    {
+                                        showStudyCardInfoText1.text =
+                                        "[영어]" + ObjectDB.english[currentIndex] + "\n" +
+                                        "[한국어]" + ObjectDB.korean[currentIndex] + "\n" +
+                                        "[품사]" + ObjectDB.phoneticAlpabet[currentIndex] + "\n";
                                 }
-                                else if(currentIndex == 2)
-                                {
-                                    showStudyCardInfoText2.text =
-                                    ObjectDB.english[currentIndex] + "\n" +
-                                    ObjectDB.korean[currentIndex] + "\n" +
-                                    ObjectDB.phoneticAlpabet[currentIndex] + "\n" +
-                                    ObjectDB.relationSentenceEn[currentIndex] + "\n" +
-                                    ObjectDB.relationSentenceKo[currentIndex];
-                                }
-                                CardInfo.SetALLCardFlagsFalse(); //모든 체크를 false로 만들기
+                                    else if (currentIndex == 2)
+                                    {
+                                        showStudyCardInfoText2.text =
+                                        "[영어]" + ObjectDB.english[currentIndex] + "\n" +
+                                        "[한국어]" + ObjectDB.korean[currentIndex] + "\n" +
+                                        "[품사]" + ObjectDB.phoneticAlpabet[currentIndex] + "\n";
+                                    }
+                                    CardInfo.SetALLCardFlagsFalse(); //모든   체크를 false로 만들기
+                            }
+                            else if (UserInfo.wordStudyAnimal) //동물 공부
+                            {
+
+                            }
+                            else if (UserInfo.wordStudyNumber) //숫자 공부
+                            {
+
+                            }
+                            else if (UserInfo.wordStudyTime) //시간 공부
+                            {
+
+                            }
+                            else if (UserInfo.wordStudyHuman) // 인물 공부
+                            {
+
+                            }
+                            else if (UserInfo.menuWordMatching) //단어 매칭이
+                            {
 
 
-                                transformationM = marker.transformation;
+                            }
+                            else if (UserInfo.menuMakeSentence) //문장 만들기
+                            {
+
+                            }
+
+
+
+
+                            transformationM = marker.transformation;
                                 //Debug.Log ("transformationM " + transformationM.ToString ());
 
                                 ARM = ARCamera.transform.localToWorldMatrix * invertYM * transformationM * invertZM;

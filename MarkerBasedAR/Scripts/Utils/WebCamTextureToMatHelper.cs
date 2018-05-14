@@ -123,9 +123,11 @@ namespace MarkerBasedARExample
         // Update is called once per frame
         protected virtual void Update ()
         {
-            if (hasInitDone) {
-                if (screenOrientation != Screen.orientation) {
-                    StartCoroutine (_Initialize ());
+            if (hasInitDone)
+            {
+                if (screenOrientation != Screen.orientation)
+                {
+                    StartCoroutine(_Initialize());
                 }
             }
         }

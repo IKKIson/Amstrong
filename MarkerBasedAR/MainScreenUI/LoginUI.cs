@@ -186,29 +186,3 @@ public class GuiPassword : MonoBehaviour
     }
 }
 
-
-
-public class ActionSomeThing
-{
-    //마커를 한번 봤으면 현재 카테고리와 현재 챕터, 마커 번호를 넘긴다.
-    public string CheckMarker(string currentCategory, string currentChapter, int markerNuber)
-    {
-        //넘겨서 데이터베이스에 알려줘야 한다. 
-        //TODO: 버퍼에 담아서 끝낼 때 한꺼번에 웹 데이터베이스에 전달해줘도 괜찮을 듯 싶다.
-
-        string something = " ";
-        return something;
-    }
-
-    // 연결해줌
-    protected void TransperWebQuery()
-    {
-        Debug.Log("TransperWebQuery");
-        //WWWForm form = new WWWForm();
-        //form.AddField("", );
-        //form.AddField("", );
-        //WWW webRequest = new WWW(CreateAccountUrl, form); // request 
-    }
-
-
-}
