@@ -15,6 +15,13 @@
 <body>
     <?php //header, navigation
     include_once($_SERVER['DOCUMENT_ROOT'] ."/common_form/path.php");?>
+   
+   <center>
+     <img src="./files/logo/main.jpg" class="img-responsive" alt="Responsive image">
+   </center>
+   
+   <!--
+   
       <form class="navbar-form navbar-left" role="search">
     <div class="form-group">
         <input type="text" class="form-control" placeholder="Search">
@@ -26,8 +33,8 @@
     <div>
   
     </div>
-    
-
+    -->
+<!--
     <div class="list-group">
     <a href="#" class="list-group-item active">
         <h4 class="list-group-item-heading">List group item heading</h4>
@@ -78,5 +85,6 @@
     2%
   </div>
 </div>
+-->
 </body>
 </html>
