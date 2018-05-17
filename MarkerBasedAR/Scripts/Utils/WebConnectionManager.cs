@@ -5,7 +5,7 @@ using UnityEngine.UI;
 public class WebConnectionManager : MonoBehaviour {
     
     protected string url;
-
+    protected string selectMenu;
     public static WebConnectionManager instance = null;
     // Use this for initialization
     void Awake () {
@@ -33,7 +33,11 @@ public class WebConnectionManager : MonoBehaviour {
     IEnumerator GetObjectDBCo()
     {
         WWWForm form = new WWWForm();
-        form.AddField("objectDB", "objectDB");
+        selectMenu = UserInfo.CheckCurrentChoicedMenu(); //현재 선택한 메뉴에대해서 불러울 DB table이름을 가져온다.
+
+        form.AddField("menu", selectMenu);  
+
+
 
         url = "http://gkagm2.dothome.co.kr/connectProgram/cardDatabase/objectDB.php";
         WWW webRequest = new WWW(url, form); // request 객체 생성후 웹사이트 로그인 url에 전송
