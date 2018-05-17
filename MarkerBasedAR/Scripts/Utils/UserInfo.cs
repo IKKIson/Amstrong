@@ -45,6 +45,30 @@ public class UserInfo {
         wordStudyHuman = false; // 인물 공부
         wordStudyTime = false; // 시간 공부
     }
+    //선택한 메뉴에 따라 연결할 외부 데이터베이스 이름을 리턴한다.
+    public static string CheckCurrentChoicedMenu()
+    {
+        string currentMenu = "";
+
+        //TODO: 단어맞추기, 문장 만들기부분을 만들어야 함.
+        
+        //단어공부부분의 체크
+        if (wordStudyNumber == true)
+            currentMenu = "NumberDB";
+        else if (wordStudyHuman == true)
+            currentMenu = "HumanDB";
+        else if (wordStudyObject == true)
+            currentMenu = "ObjectDB";
+        else if (wordStudyAnimal == true)
+            currentMenu = "AnimalDB";
+        else if (wordStudyTime == true)
+            currentMenu = "TimeDB";
+        else
+            Debug.Log("UserInfo Class의 CheckChiceMenu 함수에서 해당 DB테이블을 아직 만들지 않았습니다.");
+
+        return currentMenu;
+        
+    }
 
 }
 
