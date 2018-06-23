@@ -2,7 +2,7 @@
 
 //Database connection.
 function db_init(){
-    $conn = mysqli_connect("218.155.186.13", "amstrong&admin", "amstrong1!");    
+    $conn = mysqli_connect("58.120.29.161", "amstrong&admin", "amstrong1!");    
     mysqli_select_db($conn, "amstrong"); //database name use라는 말
     
     return $conn;
@@ -40,7 +40,7 @@ class DatabaseManager{
     //서버 database와 연결한다.
     function connect_database(){
     
-        $conn = mysqli_connect("218.155.186.13", "amstrong&admin", "amstrong1!");    
+        $conn = mysqli_connect("58.120.29.161", "amstrong&admin", "amstrong1!");    
         mysqli_select_db($conn, "amstrong"); //databasee name  (use)
         
         return $conn;
