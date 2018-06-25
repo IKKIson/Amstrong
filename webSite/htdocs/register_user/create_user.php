@@ -48,7 +48,51 @@
             if($conn){
                 $result = mysqli_query($conn, $sql);
                 echo ($result == true) ? "저장 성공" : "저장 실패";
+
+                //////////1/start
+                $sql0 = "insert AnimalStudyDB (email, q0, q1, q2, q3, q4) values ('$user_email','False','False','False','False','False')";
+                $sql1 = "insert ObjectStudyDB (email, q0, q1, q2, q3, q4) values ('$user_email','False','False','False','False','False')";
+                $sql2 = "insert WordMatchingDB (email, q0, q1, q2, q3, q4) values ('$user_email','False','False','False','False','False')";
+                $sql3 = "insert MakeSentenceDB (email, q0, q1, q2, q3, q4) values ('$user_email','False','False','False','False','False')";
+            
+                //insert 
+                $result = mysqli_query($conn, $sql0); //row 삽입
+                if($result == true){
+                    // die("success");
+                } else {
+
+                    die("fail");
+                }
+                $result = mysqli_query($conn, $sql1); //row 삽입
+                if($result == true){
+                    // die("success");
+                } else {
+
+                    // die("fail");
+                }
+                $result = mysqli_query($conn, $sql2); //row 삽입
+                if($result == true){
+                    // die("success");
+                } else {
+
+                    die("fail");
+                }
+                $result = mysqli_query($conn, $sql3); //row 삽입
+                if($result == true){
+                    // die("success");
+                } else {
+
+                    die("fail");
+                }
+                ///////////end
+
+
+
+
+
+
             }
+            
         }
     }
     ?>

@@ -15,7 +15,6 @@
 
     //앱으로부터 받아옴
     $select = $_POST['menu'];
-   
     //해당되는 선택문을 선택하여 데이터베이스에서 가져온다
     $sql = $connApp.getDBQuery($seslect);
 
