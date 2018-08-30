@@ -166,7 +166,7 @@ namespace OpenCVMarkerBasedAR
                 }
             }
 
-      //Debug.Log ("bitMatrix " + bitMatrix.dump());
+//      Debug.Log ("bitMatrix " + bitMatrix.dump());
         
             //check all possible rotations
             Mat[] rotations = new Mat[4];
@@ -195,7 +195,7 @@ namespace OpenCVMarkerBasedAR
                 }
             }
 
-      //Debug.Log ("first " + first);
+//      Debug.Log ("first " + first);
 
             nRotations.fromArray (second);
             if (first == 0) {

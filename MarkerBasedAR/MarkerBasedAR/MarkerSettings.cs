@@ -67,7 +67,7 @@ namespace OpenCVMarkerBasedAR
             
             id = id + boolArray.Length;
 
-            Debug.Log ("id " + id);
+//            Debug.Log ("id " + id);
             
             return id;
         }

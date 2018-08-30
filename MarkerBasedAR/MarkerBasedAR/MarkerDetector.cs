@@ -132,7 +132,7 @@ namespace OpenCVMarkerBasedAR
                 }
             } else {
                 m_markerDesigns = new List<byte[,]> ();
-                m_markerDesigns.Add(m_markerDesign);
+                m_markerDesigns.Add (m_markerDesign);
             }
         }
 
@@ -338,7 +338,7 @@ namespace OpenCVMarkerBasedAR
             approxCurve.Dispose ();
 
                 
-            Debug.Log ("possibleMarkers " + possibleMarkers.Count);
+            //Debug.Log ("possibleMarkers " + possibleMarkers.Count);
         
         
             // Remove these elements which corners are too close to each other.
@@ -424,7 +424,7 @@ namespace OpenCVMarkerBasedAR
                     int id = Marker.getMarkerId (canonicalMarkerImage, nRotations, m_markerDesigns [p]);
                     if (id != - 1) {
                         marker.id = id;
-                              Debug.Log ("id " + id);
+//                              Debug.Log ("id " + id);
 
                         //sort the points so that they are always in the same order no matter the camera orientation
                         List<Point> MarkerPointsList = marker.points.toList ();
