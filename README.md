@@ -1,8 +1,3 @@
-# DownLoad and Start
-- "amstrong demo*.exe" file
-
-
-
 ## Development Environment & Tools
 
 ### Application in Windows
