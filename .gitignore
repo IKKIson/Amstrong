@@ -46,5 +46,6 @@ sysinfo.txt
 *.unitypackage
 *.fbx
 *.mat
-
+*.dylib
+unity/OpenCVForUnity/Plugins/*
 
