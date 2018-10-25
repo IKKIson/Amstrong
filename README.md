@@ -81,12 +81,12 @@
 
 
 
-![1](https://github.com/IKKIson/Amstrong/blob/develop/image/p1.PNG)
-![2](https://github.com/IKKIson/Amstrong/blob/develop/image/p2.PNG)
-![3](https://github.com/IKKIson/Amstrong/blob/develop/image/p3.PNG)
-![4](https://github.com/IKKIson/Amstrong/blob/develop/image/p4.PNG)
-![5](https://github.com/IKKIson/Amstrong/blob/develop/image/p5.PNG)
-![6](https://github.com/IKKIson/Amstrong/blob/develop/image/p6.PNG)
-![7](https://github.com/IKKIson/Amstrong/blob/develop/image/p7.PNG)
-![8](https://github.com/IKKIson/Amstrong/blob/develop/image/p8.PNG)
-![9](https://github.com/IKKIson/Amstrong/blob/develop/image/p9.PNG)
+![1](https://github.com/IKKIson/Amstrong/blob/develop/image/q0.PNG)
+![2](https://github.com/IKKIson/Amstrong/blob/develop/image/q1.PNG)
+![3](https://github.com/IKKIson/Amstrong/blob/develop/image/q2.PNG)
+![4](https://github.com/IKKIson/Amstrong/blob/develop/image/q3.PNG)
+![5](https://github.com/IKKIson/Amstrong/blob/develop/image/q4.PNG)
+![6](https://github.com/IKKIson/Amstrong/blob/develop/image/q5.PNG)
+![7](https://github.com/IKKIson/Amstrong/blob/develop/image/q6.PNG)
+![8](https://github.com/IKKIson/Amstrong/blob/develop/image/q7.PNG)
+![9](https://github.com/IKKIson/Amstrong/blob/develop/image/q8.PNG)
