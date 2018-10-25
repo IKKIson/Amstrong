@@ -42,4 +42,9 @@ sysinfo.txt
 # Prefab file
 *.prefab
 
-#.unity
+*.unity
+*.unitypackage
+*.fbx
+*.mat
+
+
